@@ -8,7 +8,7 @@ function loadResults(startFrom) {
     if (querry == "") {
         alert("Давайте не пустословить!");
     } else {
-        $.ajax(
+        jQuery.ajax(
             {
                 url: '/FakeGoogle/',
                 type: 'POST',
@@ -18,9 +18,8 @@ function loadResults(startFrom) {
                 },
                 success: function (data) {
                     try {
-                        result = eval('(' + data + ')');
-
-                        if (result.queries.request[0].totalResults == 0) {
+						result = eval('(' + data + ')');
+						if (result.queries.request[0].totalResults == 0) {
 
                             $("#div1").empty().append('<p>по запросу <b>' + result.queries.request[0].searchTerms + '</b> ничего не найдено.</p>');
                             if (result.spelling == undefined) {
@@ -122,13 +121,5 @@ function loadResults(startFrom) {
     return false;
 }
 
-jQuery(window).resize(function ($) {
-    $('#form').css({
-        position: 'absolute',
-        left: ($(window).width() - $('#form').outerWidth()) / 2,
-        top: ($(window).height() - $('#form').outerHeight()) / 2
-    });
-});
-jQuery(window).resize($);
 
     

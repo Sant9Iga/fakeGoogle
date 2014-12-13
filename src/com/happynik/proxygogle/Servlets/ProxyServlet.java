@@ -21,8 +21,7 @@ public class ProxyServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         resp.setContentType("text/html;charset=UTF-8");
-        req.setCharacterEncoding("UTF-8");
-        String querry =req.getParameter("querry");
+		String querry =java.net.URLEncoder.encode(req.getParameter("querry"),"UTF-8");
         String startFrom = req.getParameter("startFrom");
         querry = querry.replace(' ','+');
         URL url = new URL("https://www.googleapis.com/customsearch/v1?q=" +querry + "&c2coff=Ru&cx=001214352836835074626:ajl1g5llbkc&lr=lang_ru&key=AIzaSyAboLpATDyas1fx9gV5Y04tyU8IN994bWU&start="+startFrom);
@@ -34,7 +33,7 @@ public class ProxyServlet extends HttpServlet {
         } else {
             is = connection.getInputStream();
         }
-        BufferedReader br = new BufferedReader(new InputStreamReader(is));
+        BufferedReader br = new BufferedReader(new InputStreamReader(is,"Utf-8"));
         String line;
         StringBuilder buffer = new StringBuilder();
         while ((line = br.readLine()) != null) {

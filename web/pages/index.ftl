@@ -5,11 +5,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Fake Google</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="Scrips/loadingresult.js"></script>
     <script type="text/javascript" src="Scrips/pagination.js"></script>
-    <script type="text/javascript" src="Scrips/pageUp.js"></script>
-    
+	<link rel="icon" href="img/favicon.png" type="image/x-icon"></link>
 
 </head>
 
@@ -30,7 +29,9 @@
         <div id="div1"></div>
         <div id="div2"></div>
     </div>
+	
 </div>
+
 <div id="top"></div>
 </body>
 

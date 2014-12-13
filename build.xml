@@ -1,27 +1,26 @@
-<project name="Fake Google" default="war" basedir="..">
+<project name="GoogleProxy" default="war">
     <property file="ant/build.properties"/>
 
     <!--path-->
     <path id="classpath">
-        <fileset dir="${lib.dir}" includes="servlet-api.jar"/>
+        
         <fileset dir="${lib.dir}" includes="freemarker.jar"/>
-        <fileset dir="${lib.dir}" includes="jquery-1.9.1.jar"/>
+		<fileset dir="${lib.dir}" includes="servlet-api.jar"/>
+        
     </path>
-
-
-
-
 
 
     <!--clean-->
     <target name="clean">
         <echo>Cleaning the ${build.dir}</echo>
         <delete dir="${build.dir}"/>
+        <delete dir="${dist.dir}"/>
     </target>
 
     <!--init-->
     <target name="init" depends="clean">
-        <echo>Creating the build directory</echo>
+        <echo>Creating the build and dist directories</echo>
+        <mkdir dir="${root.dir}/dist"/>
         <mkdir dir="${build.dir}/WEB-INF/classes"/>
         <mkdir dir="${build.dir}/WEB-INF/lib"/>
     </target>
