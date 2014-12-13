@@ -20,7 +20,7 @@
     <!--init-->
     <target name="init" depends="clean">
         <echo>Creating the build and dist directories</echo>
-        <mkdir dir="${root.dir}/dist"/>
+        <mkdir dir="dist"/>
         <mkdir dir="${build.dir}/WEB-INF/classes"/>
         <mkdir dir="${build.dir}/WEB-INF/lib"/>
     </target>
